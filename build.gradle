@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    jcenter()
+}
+
+jar {
+    baseName = 'ORM Modul'
+    version =  '1.0.0'
+}
+
+dependencies {
+	testCompile 'junit:junit:4.8.2'
+    compile 'org.projectlombok:lombok:1.16.16'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.0'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile 'org.slf4j:slf4j-simple:1.7.25'
+    compile 'mysql:mysql-connector-java:5.1.42'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.0'
+}
+
+sourceSets {
+  integTest
+}
